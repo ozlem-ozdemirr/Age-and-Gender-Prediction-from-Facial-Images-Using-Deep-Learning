@@ -32,11 +32,11 @@ One-hot encoding used for gender
 
 #### - Imbalance in gender data addressed via data augmentation
 
-## Image Augmentation:
+### Image Augmentation:
 
 #### Applied to training data for better generalization: Rotation, zoom, horizontal shift, and flip
 
-## Model Architecture:
+### Model Architecture:
 
 #### - Used MobileNetV2 (a lightweight CNN pre-trained on ImageNet) as the base
 
@@ -46,13 +46,13 @@ One-hot encoding used for gender
 
 #### -- gender_output: Dense layer with softmax activation for gender
 
-## The model was compiled with:
+### The model was compiled with:
 
 #### - Loss: MSE for age, categorical crossentropy for gender
 
 #### - Metrics: MAE (mean absolute error) for age, accuracy for gender
 
-## Training:
+### Training:
 
 #### - Trained for up to 30 epochs with early stopping
 
@@ -60,13 +60,13 @@ One-hot encoding used for gender
 
 #### - Tracked training and validation loss/accuracy
 
-## Evaluation and Visualization:
+### Evaluation and Visualization:
 
 #### - Plotted age MAE and gender classification accuracy over epochs
 
 #### - Predicted age and gender for a sample test image
 
-## Results:
+### Results:
 #### - The model successfully learned to:
 
 #### - Predict age with reasonable MAE (e.g., ±5 years error range)
