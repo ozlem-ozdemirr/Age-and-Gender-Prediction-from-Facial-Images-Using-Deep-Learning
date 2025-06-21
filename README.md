@@ -1,10 +1,9 @@
-#Age and Gender Prediction from Facial Images Using Deep Learning
+# Age and Gender Prediction from Facial Images Using Deep Learning
 ## Objective:
 #### The main goal of this project is to automatically predict a person’s age and gender from a facial image using a Convolutional Neural Network (CNN) and transfer learning. This task is a common real-world application of computer vision and has wide-ranging use cases, such as in digital advertising, smart surveillance systems, demographic analysis, and personalization engines.
 
 ## Dataset:
-#### UTKFace Dataset: A publicly available dataset containing over 20,000 labeled facial images.
-
+#### UTKFace Dataset: https://susanqq.github.io/UTKFace/ 
 #### Each image filename encodes the age, gender, and race of the individual:
 Example: 25_0_1_20170109150557335.jpg → Age: 25, Gender: 0 (Male), Race: 1
 
