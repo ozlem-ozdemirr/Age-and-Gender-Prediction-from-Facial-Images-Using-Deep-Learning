@@ -9,14 +9,14 @@
 Example: 25_0_1_20170109150557335.jpg → Age: 25, Gender: 0 (Male), Race: 1
 
 ## Problem Type:
-Multi-output model:
+### Multi-output model:
 
-Age prediction: a regression task (predict a numerical value)
+#### Age prediction: a regression task (predict a numerical value)
 
-Gender prediction: a binary classification task (male/female)
+#### Gender prediction: a binary classification task (male/female)
 
-Techniques and Workflow:
-Image Preprocessing:
+## Techniques and Workflow:
+### Image Preprocessing:
 
 Images resized to 128x128 pixels
 
@@ -26,65 +26,63 @@ Labels extracted from filenames
 
 One-hot encoding used for gender
 
-Data Splitting:
+### Data Splitting:
 
-Dataset split into training and testing sets (80/20)
+#### - Dataset split into training and testing sets (80/20)
 
-Imbalance in gender data addressed via data augmentation
+#### - Imbalance in gender data addressed via data augmentation
 
-Image Augmentation:
+## Image Augmentation:
 
-Applied to training data for better generalization:
+#### Applied to training data for better generalization: Rotation, zoom, horizontal shift, and flip
 
-Rotation, zoom, horizontal shift, and flip
+## Model Architecture:
 
-Model Architecture:
+#### - Used MobileNetV2 (a lightweight CNN pre-trained on ImageNet) as the base
 
-Used MobileNetV2 (a lightweight CNN pre-trained on ImageNet) as the base
+#### - Added custom fully connected layers for:
 
-Added custom fully connected layers for:
+#### -- age_output: Dense layer with linear activation for age
 
-age_output: Dense layer with linear activation for age
+#### -- gender_output: Dense layer with softmax activation for gender
 
-gender_output: Dense layer with softmax activation for gender
+## The model was compiled with:
 
-The model was compiled with:
+#### - Loss: MSE for age, categorical crossentropy for gender
 
-Loss: MSE for age, categorical crossentropy for gender
+#### - Metrics: MAE (mean absolute error) for age, accuracy for gender
 
-Metrics: MAE (mean absolute error) for age, accuracy for gender
+## Training:
 
-Training:
+#### - Trained for up to 30 epochs with early stopping
 
-Trained for up to 30 epochs with early stopping
+#### - Used Adam optimizer (learning rate = 0.0001)
 
-Used Adam optimizer (learning rate = 0.0001)
+#### - Tracked training and validation loss/accuracy
 
-Tracked training and validation loss/accuracy
+## Evaluation and Visualization:
 
-Evaluation and Visualization:
+#### - Plotted age MAE and gender classification accuracy over epochs
 
-Plotted age MAE and gender classification accuracy over epochs
+#### - Predicted age and gender for a sample test image
 
-Predicted age and gender for a sample test image
+## Results:
+#### - The model successfully learned to:
 
-Results:
-The model successfully learned to:
+#### - Predict age with reasonable MAE (e.g., ±5 years error range)
 
-Predict age with reasonable MAE (e.g., ±5 years error range)
+#### - Predict gender with high accuracy (typically above 90%)
 
-Predict gender with high accuracy (typically above 90%)
+#### - The use of transfer learning enabled efficient training even on limited data.
 
-The use of transfer learning enabled efficient training even on limited data.
+## Possible Enhancements:
+#### - Implement Grad-CAM to visualize which parts of the face the model focuses on
 
-Possible Enhancements:
-Implement Grad-CAM to visualize which parts of the face the model focuses on
+#### - Add a Streamlit web interface for uploading images and live predictions
 
-Add a Streamlit web interface for uploading images and live predictions
+#### - Further fine-tune MobileNetV2 or experiment with models like ResNet or EfficientNet
 
-Further fine-tune MobileNetV2 or experiment with models like ResNet or EfficientNet
+#### - Handle age outliers (e.g., very young or very old) through stratified sampling or loss weighting
 
-Handle age outliers (e.g., very young or very old) through stratified sampling or loss weighting
-
-Conclusion:
-This project demonstrates a practical application of deep learning in the multi-task learning setting. By combining transfer learning with a dual-output architecture, it delivers both regression and classification results from facial data with good performance. It's a strong portfolio piece for showcasing expertise in image processing, neural networks, and real-world AI deployment.
+## Conclusion:
+#### This project demonstrates a practical application of deep learning in the multi-task learning setting. By combining transfer learning with a dual-output architecture, it delivers both regression and classification results from facial data with good performance. It's a strong portfolio piece for showcasing expertise in image processing, neural networks, and real-world AI deployment.
